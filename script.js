@@ -1,5 +1,9 @@
-   document.getElementById("signupForm").addEventListener("submit", function(e) {
-      e.preventDefault(); // Prevent actual form submission
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("registration-form");
+  const feedback = document.getElementById("form-feedback");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
       // Input values
       const username = document.getElementById("username").value.trim();

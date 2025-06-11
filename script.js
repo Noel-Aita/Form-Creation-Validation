@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Message display element
       const messageDiv = document.getElementById("message");
-      messageDiv.innerHTML = "";
-      messageDiv.className = "";
+      feedbackDiv.innerHTML = "";
+      feedbackDiv.className = "";   //messagesDiv
 
       // Validation flags
       let isValid = true;

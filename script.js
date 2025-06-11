@@ -42,10 +42,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Display result
       if (isValid) {
-        messageDiv.className = "success";
-        messageDiv.textContent = "Form submitted successfully!";
+        feedbackDiv.className = "success";
+        feedbackDiv.textContent = "Registration successful";
       } else {
-        messageDiv.className = "error";
-        messageDiv.innerHTML = errors.join("<br>");
+        feedbackDiv.className = "error";
+        feedbackDiv.innerHTML = errors.join("<br>");
       }
     });

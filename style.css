@@ -52,7 +52,7 @@ button:hover {
 #form-feedback {
     margin-top: 10px;
     padding: 10px;
-    color: #d8000c;
+    color: #dc3545;
     background-color: #ffbaba;
     border-radius: 4px;
     display: none; /* Initially hide the feedback div */

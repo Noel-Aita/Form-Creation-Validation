@@ -42,10 +42,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Display result
       if (isValid) {
+        feedbackDiv.style.color = "#28a745";
         feedbackDiv.className = "success";
         feedbackDiv.textContent = "Registration successful";
       } else {
+        feedbackDiv.style.color = "#dc3545";
         feedbackDiv.className = "error";
-        feedbackDiv.innerHTML = errors.join("<br>");
+        feedbackDiv.innerHTML = messages.join("<br>");
       }
     });

@@ -1,0 +1,47 @@
+   document.getElementById("signupForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // Prevent actual form submission
+
+      // Input values
+      const username = document.getElementById("username").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+
+      // Message display element
+      const messageDiv = document.getElementById("message");
+      messageDiv.innerHTML = "";
+      messageDiv.className = "";
+
+      // Validation flags
+      let isValid = true;
+      let errors = [];
+
+      // Username validation
+      if (username.length < 3 || !/^[a-zA-Z0-9]+$/.test(username)) {
+        errors.push("Username must be at least 3 characters and contain only letters and numbers.");
+        isValid = false;
+      }
+
+      // Email validation
+      const atIndex = email.indexOf("@");
+      const dotIndex = email.lastIndexOf(".");
+      if (atIndex < 1 || dotIndex <= atIndex + 1 || dotIndex === email.length - 1) {
+        errors.push("Please enter a valid email address.");
+        isValid = false;
+      }
+
+      // Password validation
+      const hasNumber = /[0-9]/.test(password);
+      if (password.length < 6 || !hasNumber) {
+        errors.push("Password must be at least 6 characters long and contain at least one number.");
+        isValid = false;
+      }
+
+      // Display result
+      if (isValid) {
+        messageDiv.className = "success";
+        messageDiv.textContent = "Form submitted successfully!";
+      } else {
+        messageDiv.className = "error";
+        messageDiv.innerHTML = errors.join("<br>");
+      }
+    });

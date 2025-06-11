@@ -17,11 +17,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Validation flags
       let isValid = true;
-      let errors = [];
+      let messages = [];
 
       // Username validation
       if (username.length < 3 || !/^[a-zA-Z0-9]+$/.test(username)) {
-        errors.push("Username must be at least 3 characters and contain only letters and numbers.");
+        messages.push("Username must be at least 3 characters and contain only letters and numbers.");
         isValid = false;
       }
 
@@ -29,14 +29,14 @@ document.addEventListener("DOMContentLoaded", function () {
       const atIndex = email.indexOf("@");
       const dotIndex = email.lastIndexOf(".");
       if (atIndex < 1 || dotIndex <= atIndex + 1 || dotIndex === email.length - 1) {
-        errors.push("Please enter a valid email address.");
+        messages.push("Please enter a valid email address.");
         isValid = false;
       }
 
       // Password validation
       const hasNumber = /[0-9]/.test(password);
       if (password.length < 6 || !hasNumber) {
-        errors.push("Password must be at least 6 characters long and contain at least one number.");
+        messages.push("Password must be at least 6 characters long and contain at least one number.");
         isValid = false;
       }
 
